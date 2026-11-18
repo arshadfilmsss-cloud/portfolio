@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mohammed Arshad — Videographer and Video Editor portfolio">
+<title>Mohammed Arshad — Creative Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4f3f0;--ink:#090909;--muted:#777570;--line:#d7d5d0;--max:1320px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 80px));margin:auto}
+header{height:78px;display:flex;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,243,240,.94);backdrop-filter:blur(12px);z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between}.logo{font:800 18px Manrope,sans-serif;letter-spacing:-1px}.logo span{color:#999}
+.navlinks{display:flex;gap:30px;font-size:12px;color:#555}.navlinks a:hover{color:#000}
+.availability{font-size:11px;color:#777}.availability b{color:#111}
+.hero{padding:65px 0 90px}.intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:7%;align-items:center}
+.profile-photo{height:470px;background:#deddd7;overflow:hidden;position:relative}
+.profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-hint{position:absolute;inset:auto 12px 12px;background:rgba(0,0,0,.65);color:white;padding:9px 11px;font-size:10px}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#777;margin-bottom:18px}
+h1,h2,h3,p{margin-top:0}h1{font:800 clamp(55px,7.5vw,105px)/.88 Manrope,sans-serif;letter-spacing:-.085em;margin:0 0 25px}
+.intro-text{font-size:13px;line-height:1.85;color:#65645f;max-width:480px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px;padding-top:20px;border-top:1px solid var(--line);max-width:480px}
+.meta label{display:block;color:#999;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px}.meta strong{font-size:11px;font-weight:600}
+.hero-title{font:800 clamp(55px,10vw,135px)/.82 Manrope,sans-serif;letter-spacing:-.095em;margin:95px 0 18px}
+.hero-sub{font-size:12px;color:#777;max-width:390px;line-height:1.7}
+.section{padding:95px 0;border-top:1px solid var(--line)}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
+.section-title{font:800 clamp(43px,6.5vw,82px)/.9 Manrope,sans-serif;letter-spacing:-.08em;margin:0}
+.section-desc{font-size:12px;line-height:1.7;color:#777;max-width:340px;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:start}
+.about-grid p{font-size:14px;line-height:1.9;color:#666;max-width:560px}
+.services{border-top:1px solid var(--line)}
+.service-row{display:grid;grid-template-columns:55px 1fr 240px;gap:20px;align-items:center;padding:21px 0;border-bottom:1px solid var(--line)}
+.service-row .num{font-size:10px;color:#999}.service-row strong{font:700 clamp(17px,2vw,23px) Manrope,sans-serif;letter-spacing:-.7px}.service-row span:last-child{text-align:right;font-size:10px;color:#888}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}.tool{border:1px solid var(--line);border-radius:99px;padding:10px 15px;font-size:10px;color:#555}
+.category-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 38px}
+.category-nav a{border:1px solid var(--line);border-radius:99px;padding:10px 15px;font-size:10px;color:#555;transition:.2s}
+.category-nav a:hover{background:#090909;color:#fff;border-color:#090909}
+.work-category{padding:36px 0 15px;border-top:1px solid var(--line);scroll-margin-top:95px}
+.work-category:first-of-type{border-top:0}
+.category-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}
+.category-heading h3{font:800 clamp(28px,4vw,46px)/.95 Manrope,sans-serif;letter-spacing:-.07em;margin:0}
+.category-heading span{font-size:10px;color:#888}
+.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.project{min-width:0;cursor:pointer}.project.wide{grid-column:span 2}
+.project-thumb{height:380px;position:relative;overflow:hidden;background:#d8d6d0;border-radius:4px}
+.project-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.project:hover .project-thumb img{transform:scale(1.045)}
+.play{position:absolute;right:13px;bottom:13px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:13px}
+.project-info{display:flex;justify-content:space-between;gap:12px;padding:12px 1px 18px}
+.project-info strong{font-size:11px;font-weight:600}.project-info span{font-size:9px;color:#888}
+.placeholder-label{position:absolute;inset:0;display:grid;place-items:center;color:#777;font-size:11px;text-align:center;padding:20px}
+.contact{background:#090909;color:#f4f3f0;padding:90px 0 45px}
+.contact h2{font:800 clamp(52px,9vw,110px)/.88 Manrope,sans-serif;letter-spacing:-.085em;max-width:850px;margin:0 0 55px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-label{font-size:9px;color:#777;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.contact a{font-size:12px;line-height:2.2}.contact a:hover{opacity:.65}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #333;margin-top:65px;padding-top:18px;color:#777;font-size:9px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:25px}
+.modal.open{display:flex}.modal-inner{width:min(100%,1000px);position:relative}
+.modal video{width:100%;max-height:78vh;background:#000;display:block}
+.modal-close{position:absolute;right:0;bottom:calc(100% + 12px);border:1px solid #777;background:transparent;color:white;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:18px}
+.modal-caption{color:#fff;font-size:12px;padding-top:12px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+@media(max-width:800px){.wrap{width:calc(100% - 36px)}.navlinks{gap:14px;font-size:10px}.availability{display:none}.intro-grid{grid-template-columns:1fr 1fr;gap:22px}.profile-photo{height:340px}.section{padding:75px 0}.project-grid{grid-template-columns:repeat(2,1fr)}.project-thumb{height:320px}.about-grid{gap:5%}}
+@media(max-width:540px){.wrap{width:calc(100% - 30px)}header{height:65px}.navlinks{gap:10px}.navlinks a{font-size:9px}.hero{padding:38px 0 65px}.intro-grid{grid-template-columns:1fr}.profile-photo{height:300px}.hero-title{margin-top:75px}.section-top{display:block}.section-desc{margin-top:15px}.about-grid{grid-template-columns:1fr;gap:8px}.project-grid{grid-template-columns:1fr 1fr;gap:9px}.project-thumb{height:250px}.project.wide .project-thumb{height:200px}.project-info{display:block}.project-info span{display:block;margin-top:5px}.service-row{grid-template-columns:28px 1fr;gap:10px}.service-row span:last-child{grid-column:2;text-align:left}.contact-grid{grid-template-columns:1fr;gap:25px}.footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#home">MA<span>.</span></a>
+<nav class="navlinks"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#works">Works</a><a href="#contact">Contact</a></nav>
+<div class="availability">Availability<br><b>Open for projects</b></div>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap">
+<div class="intro-grid">
+<div class="profile-photo reveal">
+<!-- Replace profile.jpg with your own portrait photo file -->
+<img src="profile.jpg" alt="Mohammed Arshad portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<div class="placeholder-label" style="display:none">ADD YOUR PHOTO<br>Save your portrait as profile.jpg</div>
+</div>
+<div class="reveal">
+<div class="kicker">Videographer · Video Editor</div>
+<h1>Mohammed<br>Arshad.</h1>
+<p class="intro-text">I'm a videographer and video editor passionate about turning raw footage into engaging visual stories. I create cinematic edits, brand content and social media videos with a focus on strong storytelling, smooth pacing, sound design and colour.</p>
+<div class="meta-grid">
+<div class="meta"><label>Profession</label><strong>Videographer & Video Editor</strong></div>
+<div class="meta"><label>Tools</label><strong>Premiere Pro · After Effects · DaVinci</strong></div>
+<div class="meta"><label>Focus</label><strong>Editing · Shooting · Colour</strong></div>
+<div class="meta"><label>Availability</label><strong>Open for opportunities</strong></div>
+</div>
+</div>
+</div>
+<h2 class="hero-title reveal">Visual Stories.</h2>
+<p class="hero-sub reveal">Creative videos for brands, businesses and people — from the first frame to the final cut.</p>
+</div></section>
+
+<section class="section" id="about"><div class="wrap">
+<div class="section-top reveal"><div><div class="kicker">01 / Get to know me</div><h2 class="section-title">About me.</h2></div><p class="section-desc">A little about my creative approach, experience and the way I bring ideas to life.</p></div>
+<div class="about-grid reveal">
+<p>I'm Mohammed Arshad, a videographer and video editor from Kerala, India. I enjoy creating visual content that feels cinematic, clear and memorable. My work includes short-form content, promotional videos, product visuals and storytelling edits.</p>
+<p>I work across shooting and post-production, combining thoughtful framing, precise editing, colour grading, motion and sound design to create a polished final result. I'm always learning, experimenting and looking for new creative challenges.</p>
+</div>
+</div></section>
+
+<section class="section" id="services"><div class="wrap">
+<div class="section-top reveal"><div><div class="kicker">02 / What I do</div><h2 class="section-title">Services.</h2></div><p class="section-desc">Creative production and post-production focused on storytelling, pace and a polished finish.</p></div>
+<div class="services">
+<div class="service-row reveal"><span class="num">01</span><strong>Video Editing</strong><span>Reels · Promos · YouTube</span></div>
+<div class="service-row reveal"><span class="num">02</span><strong>Videography</strong><span>Shooting · Camera · Direction</span></div>
+<div class="service-row reveal"><span class="num">03</span><strong>Colour Grading</strong><span>Cinematic looks · Colour correction</span></div>
+<div class="service-row reveal"><span class="num">04</span><strong>Motion & Sound</strong><span>Titles · Graphics · Sound design</span></div>
+</div>
+<div class="tools reveal"><span class="tool">Adobe Premiere Pro</span><span class="tool">Adobe After Effects</span><span class="tool">DaVinci Resolve</span><span class="tool">Colour Grading</span><span class="tool">Sound Design</span><span class="tool">Motion Graphics</span></div>
+</div></section>
+
+<section class="section" id="works"><div class="wrap">
+<div class="section-top reveal"><div><div class="kicker">03 / Selected projects</div><h2 class="section-title">Works.</h2></div><p class="section-desc">Explore my work by category — automotive, travel, advertising, colour grading, cinematic reels and podcast. Tap any tile to play.</p></div>
+<nav class="category-nav reveal"><a href="#automotive">Automotive</a><a href="#travel">Travel</a><a href="#advertising">Advertising</a><a href="#colorgrading">Colour Grading</a><a href="#cinematic">Cinematic Reel</a><a href="#podcast">Podcast</a></nav>
+
+<section class="work-category" id="automotive"><div class="category-heading"><h3>Automotive</h3><span>01 / CAR FILMS · 6 VIDEOS</span></div><div class="project-grid">
+<div class="project" data-video="web-videos/automotive-videos-car-speed-ramp.mp4" data-title="Car Speed Ramp"><div class="project-thumb"><img src="thumbnails/automotive-videos-car-speed-ramp.jpg" alt="Car Speed Ramp thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Car Speed Ramp</strong><span>AUTOMOTIVE / 01</span></div></div>
+<div class="project" data-video="web-videos/automotive-videos-speedramp-edits-1.mp4" data-title="Speed Ramp Edit"><div class="project-thumb"><img src="thumbnails/automotive-videos-speedramp-edits-1.jpg" alt="Speed Ramp Edit thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Speed Ramp Edit</strong><span>AUTOMOTIVE / 02</span></div></div>
+<div class="project" data-video="web-videos/automotive-videos-speedramp-2-1.mp4" data-title="Speed Ramp Edit 02"><div class="project-thumb"><img src="thumbnails/automotive-videos-speedramp-2-1.jpg" alt="Speed Ramp Edit 02 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Speed Ramp Edit 02</strong><span>AUTOMOTIVE / 03</span></div></div>
+<div class="project" data-video="web-videos/automotive-videos-car.mp4" data-title="Car Reel"><div class="project-thumb"><img src="thumbnails/automotive-videos-car.jpg" alt="Car Reel thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Car Reel</strong><span>AUTOMOTIVE / 04</span></div></div>
+<div class="project" data-video="web-videos/automotive-videos-copy-33f3f173-1cec-4a22-8e11-69b75f75db01-2.mp4" data-title="Automotive Reel 02"><div class="project-thumb"><img src="thumbnails/automotive-videos-copy-33f3f173-1cec-4a22-8e11-69b75f75db01-2.jpg" alt="Automotive Reel 02 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Automotive Reel 02</strong><span>AUTOMOTIVE / 05</span></div></div>
+<div class="project" data-video="web-videos/automotive-videos-copy-6ac10ca6-02c3-4388-a387-64d841c9552b.mp4" data-title="Automotive Reel 03"><div class="project-thumb"><img src="thumbnails/automotive-videos-copy-6ac10ca6-02c3-4388-a387-64d841c9552b.jpg" alt="Automotive Reel 03 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Automotive Reel 03</strong><span>AUTOMOTIVE / 06</span></div></div>
+</div></section>
+
+<section class="work-category" id="travel"><div class="category-heading"><h3>Travel</h3><span>02 / TRAVEL STORIES · 5 VIDEOS</span></div><div class="project-grid">
+<div class="project wide" data-video="web-videos/travel-videos-cinematic-travel-og.mp4" data-title="Cinematic Travel"><div class="project-thumb"><img src="thumbnails/travel-videos-cinematic-travel-og.jpg" alt="Cinematic Travel thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Cinematic Travel</strong><span>TRAVEL / 01</span></div></div>
+<div class="project wide" data-video="web-videos/travel-videos-japan-reel.mp4" data-title="Japan Reel"><div class="project-thumb"><img src="thumbnails/travel-videos-japan-reel.jpg" alt="Japan Reel thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Japan Reel</strong><span>TRAVEL / 02</span></div></div>
+<div class="project wide" data-video="web-videos/travel-videos-the-mountain-lost-connection-136940.mp4" data-title="Lost Connection"><div class="project-thumb"><img src="thumbnails/travel-videos-the-mountain-lost-connection-136940.jpg" alt="Lost Connection thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Lost Connection</strong><span>TRAVEL / 03</span></div></div>
+<div class="project wide" data-video="web-videos/travel-videos-198-135846853-medium.mp4" data-title="Travel Edit"><div class="project-thumb"><img src="thumbnails/travel-videos-198-135846853-medium.jpg" alt="Travel Edit thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Travel Edit</strong><span>TRAVEL / 04</span></div></div>
+<div class="project wide" data-video="web-videos/travel-videos-davinci-learning-1.mp4" data-title="DaVinci Travel Grade"><div class="project-thumb"><img src="thumbnails/travel-videos-davinci-learning-1.jpg" alt="DaVinci Travel Grade thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>DaVinci Travel Grade</strong><span>TRAVEL / 05</span></div></div>
+</div></section>
+
+<section class="work-category" id="advertising"><div class="category-heading"><h3>Advertising</h3><span>03 / COMMERCIALS & AD REELS · 8 VIDEOS</span></div><div class="project-grid">
+<div class="project" data-video="web-videos/advertising-meta-ad.mp4" data-title="Meta Ad"><div class="project-thumb"><img src="thumbnails/advertising-meta-ad.jpg" alt="Meta Ad thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Meta Ad</strong><span>ADVERTISING / 01</span></div></div>
+<div class="project" data-video="web-videos/advertising-ad-uzbek-3.mp4" data-title="Uzbekistan Ad"><div class="project-thumb"><img src="thumbnails/advertising-ad-uzbek-3.jpg" alt="Uzbekistan Ad thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Uzbekistan Ad</strong><span>ADVERTISING / 02</span></div></div>
+<div class="project" data-video="web-videos/advertising-jet-prices-matar-rsl-1.mp4" data-title="Jet Prices Promo"><div class="project-thumb"><img src="thumbnails/advertising-jet-prices-matar-rsl-1.jpg" alt="Jet Prices Promo thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Jet Prices Promo</strong><span>ADVERTISING / 03</span></div></div>
+<div class="project" data-video="web-videos/advertising-af-launhed.mp4" data-title="AF Launch"><div class="project-thumb"><img src="thumbnails/advertising-af-launhed.jpg" alt="AF Launch thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>AF Launch</strong><span>ADVERTISING / 04</span></div></div>
+<div class="project" data-video="web-videos/advertising-af-reel-2.mp4" data-title="AF Reel"><div class="project-thumb"><img src="thumbnails/advertising-af-reel-2.jpg" alt="AF Reel thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>AF Reel</strong><span>ADVERTISING / 05</span></div></div>
+<div class="project" data-video="web-videos/advertising-innerlink-raw-for-edit.mp4" data-title="Innerlink Promo"><div class="project-thumb"><img src="thumbnails/advertising-innerlink-raw-for-edit.jpg" alt="Innerlink Promo thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Innerlink Promo</strong><span>ADVERTISING / 06</span></div></div>
+<div class="project" data-video="web-videos/advertising-c3797.mp4" data-title="Brand Commercial 01"><div class="project-thumb"><img src="thumbnails/advertising-c3797.jpg" alt="Brand Commercial 01 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Brand Commercial 01</strong><span>ADVERTISING / 07</span></div></div>
+<div class="project" data-video="web-videos/advertising-c4665.mp4" data-title="Brand Commercial 02"><div class="project-thumb"><img src="thumbnails/advertising-c4665.jpg" alt="Brand Commercial 02 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Brand Commercial 02</strong><span>ADVERTISING / 08</span></div></div>
+</div></section>
+
+<section class="work-category" id="colorgrading"><div class="category-heading"><h3>Colour Grading</h3><span>04 / LOOKS & GRADES · 3 VIDEOS</span></div><div class="project-grid">
+<div class="project wide" data-video="web-videos/color-grading-color-grading.mp4" data-title="Colour Grade"><div class="project-thumb"><img src="thumbnails/color-grading-color-grading.jpg" alt="Colour Grade thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Colour Grade</strong><span>COLOUR GRADING / 01</span></div></div>
+<div class="project" data-video="web-videos/color-grading-model-color-grading.mp4" data-title="Model Colour Grade"><div class="project-thumb"><img src="thumbnails/color-grading-model-color-grading.jpg" alt="Model Colour Grade thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Model Colour Grade</strong><span>COLOUR GRADING / 02</span></div></div>
+<div class="project" data-video="web-videos/color-grading-model-color-grading-2.mp4" data-title="Model Colour Grade 02"><div class="project-thumb"><img src="thumbnails/color-grading-model-color-grading-2.jpg" alt="Model Colour Grade 02 thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Model Colour Grade 02</strong><span>COLOUR GRADING / 03</span></div></div>
+</div></section>
+
+<section class="work-category" id="cinematic"><div class="category-heading"><h3>Cinematic Reel</h3><span>05 / CINEMATIC FILMS · 4 VIDEOS</span></div><div class="project-grid">
+<div class="project wide" data-video="web-videos/cinematic-reel-core-reel-cin.mp4" data-title="Core Cinematic Reel"><div class="project-thumb"><img src="thumbnails/cinematic-reel-core-reel-cin.jpg" alt="Core Cinematic Reel thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Core Cinematic Reel</strong><span>CINEMATIC REEL / 01</span></div></div>
+<div class="project wide" data-video="web-videos/cinematic-reel-c4319.mp4" data-title="Cinematic Film"><div class="project-thumb"><img src="thumbnails/cinematic-reel-c4319.jpg" alt="Cinematic Film thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Cinematic Film</strong><span>CINEMATIC REEL / 02</span></div></div>
+<div class="project" data-video="web-videos/cinematic-reel-c3780-1-2.mp4" data-title="Cinematic Story"><div class="project-thumb"><img src="thumbnails/cinematic-reel-c3780-1-2.jpg" alt="Cinematic Story thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Cinematic Story</strong><span>CINEMATIC REEL / 03</span></div></div>
+<div class="project" data-video="web-videos/cinematic-reel-img-6979.mp4" data-title="Cinematic Short"><div class="project-thumb"><img src="thumbnails/cinematic-reel-img-6979.jpg" alt="Cinematic Short thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Cinematic Short</strong><span>CINEMATIC REEL / 04</span></div></div>
+</div></section>
+
+<section class="work-category" id="podcast"><div class="category-heading"><h3>Podcast</h3><span>06 / LONG-FORM & CLIPS · 1 VIDEO</span></div><div class="project-grid">
+<div class="project wide" data-video="web-videos/podcast-c0398.mp4" data-title="Podcast Episode Edit"><div class="project-thumb"><img src="thumbnails/podcast-c0398.jpg" alt="Podcast Episode Edit thumbnail" loading="lazy"><span class="play">▶</span></div><div class="project-info"><strong>Podcast Episode Edit</strong><span>PODCAST / 01</span></div></div>
+</div></section>
+
+</div></section>
+</main>
+
+<footer class="contact" id="contact"><div class="wrap">
+<div class="kicker">04 / Contact</div><h2>Let's make<br>something great.</h2>
+<div class="contact-grid">
+<div><div class="contact-label">Contact</div><a href="mailto:arshadfilmsss@gmail.com">arshadfilmsss@gmail.com</a><br><a href="https://wa.me/91XXXXXXXXXX">WhatsApp — add your number</a></div>
+<div><div class="contact-label">Social</div><a href="https://www.instagram.com/arshhad.___/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.behance.net/arshadfilms1" target="_blank" rel="noopener">Behance</a><br><a href="https://www.youtube.com/@arshadfilmsss" target="_blank" rel="noopener">YouTube</a><br><a href="https://www.linkedin.com/in/arshhad" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+<div class="footer"><span>© <span id="year"></span> Mohammed Arshad. Videographer & Video Editor.</span><a href="#home">Back to top ↑</a></div>
+</div></footer>
+
+<div class="modal" id="videoModal" aria-hidden="true"><div class="modal-inner"><button class="modal-close" aria-label="Close video">×</button><video controls playsinline preload="none"></video><div class="modal-caption"></div></div></div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const modal=document.getElementById('videoModal'),player=modal.querySelector('video'),caption=modal.querySelector('.modal-caption');
+document.querySelectorAll('.project').forEach(card=>card.addEventListener('click',()=>{
+ const source=card.dataset.video;
+ if(!source)return;
+ player.src=encodeURI(source);caption.textContent=card.dataset.title||'Portfolio video';modal.classList.add('open');modal.setAttribute('aria-hidden','false');player.play().catch(()=>{});
+}));
+function closeModal(){player.pause();player.removeAttribute('src');player.load();modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}
+modal.querySelector('.modal-close').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>

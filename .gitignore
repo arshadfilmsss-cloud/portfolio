@@ -1,0 +1,9 @@
+.DS_Store
+# Original full-size videos (too large for GitHub) — the site uses web-videos/
+/Advertising/
+/Automotive Videos/
+/cinematic Reel/
+/Color Grading/
+/Podcast/
+/Travel Videos/
+*.tmp.mp4
